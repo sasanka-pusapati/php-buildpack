@@ -133,7 +133,7 @@ class CAAPMInstaller(object):
         if (self._appname is None):
             vcap_app = self._ctx.get('VCAP_APPLICATION', {})
             self._appname = vcap_app.get('name', None)
-            self._log.debug("App Name resolved is [%s]", self.appname)
+            self._log.debug("App Name resolved is [%s]", self._appname)
             if (self._appname is None):
                 self._appname = self._defaultappname;
         if (self._collport is None):
