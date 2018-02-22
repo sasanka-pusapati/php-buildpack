@@ -166,7 +166,7 @@ class CAAPMInstaller(object):
 	
 	installercmd = [caapm_temp +"/apm-phpagent/installer.sh"]
 	installercmd.append('-appname')
-        installercmd.append('"'+ self._appname + '"')
+        installercmd.append('"'+ %self._appname + '"')
 	installercmd.append('-collport')
         installercmd.append('%s' %self._collport)
 	installercmd.append('-collhost')
@@ -180,13 +180,13 @@ class CAAPMInstaller(object):
 	installercmd.append('-ini')
         installercmd.append('%s' %caapm_temp)
 	installercmd.append('-agenthostname')
-        installercmd.append('%s' self._agenthostname)	
+        installercmd.append('%s' %self._agenthostname)	
 	
 	if (self._enabledBA):
             installercmd.append('-enableBrowserAgentSupport')           
 	    if(self._BACookieExpTime > 3)
 	        installercmd.append('-browserAgentCookieExpTime')
-                installercmd.append('%s' self._BACookieExpTime)
+                installercmd.append('%s' %self._BACookieExpTime)
 	installercmd.append('-enableCFSupport')
         
         _log.debug("Compiled CA APM PHP Agent install commands %s"  %installercmd)
