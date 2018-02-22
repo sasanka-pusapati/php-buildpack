@@ -166,7 +166,7 @@ class CAAPMInstaller(object):
 	
 	installercmd = [caapm_temp +"/apm-phpagent/installer.sh"]
 	installercmd.append('-appname')
-        installercmd.append('"'+ %self._appname + '"')
+        installercmd.append('"'+ self._appname + '"')
 	installercmd.append('-collport')
         installercmd.append('%s' %self._collport)
 	installercmd.append('-collhost')
