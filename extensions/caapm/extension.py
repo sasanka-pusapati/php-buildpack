@@ -187,7 +187,7 @@ class CAAPMInstaller(object):
 	    if(self._BACookieExpTime is not None) and (self._BACookieExpTime != 3):
 	        installercmd.append('-browserAgentCookieExpTime')
                 installercmd.append('%s' %self._BACookieExpTime)
-	installercmd.append('-enableCFSupport')
+	#installercmd.append('-enableCFSupport')
         
         _log.debug("Compiled CA APM PHP Agent install commands %s"  %installercmd)
         print("Installing CA APM PHP Agent")
