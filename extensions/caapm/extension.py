@@ -184,7 +184,7 @@ class CAAPMInstaller(object):
 	
 	if (self._enabledBA):
             installercmd.append('-enableBrowserAgentSupport')           
-	    if(self._BACookieExpTime > 3)
+	    if(self._BACookieExpTime is not None) and (self._BACookieExpTime != 3):
 	        installercmd.append('-browserAgentCookieExpTime')
                 installercmd.append('%s' %self._BACookieExpTime)
 	installercmd.append('-enableCFSupport')
