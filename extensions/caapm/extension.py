@@ -152,7 +152,15 @@ class CAAPMInstaller(object):
             vcap_app_uri = vcap_app.get('application_uris', None)
 	    self._agenthostname = vcap_app_uri[0]
 	if (self._enabledBA is None):
-            self.enabledBA = self._defaultenabledBA;	    
+            self._enabledBA = self._defaultenabledBA;
+	else :
+	    lowerCaseValue = booleanValue.lower()
+            if (lowerCaseValue in ['true','yes','1','enable']):
+                self._enabledBA = True
+            elif (lowerCaseValue in ['false','no','0', 'disable']):
+                self._enabledBA = False
+	    else:
+	        self._enabledBA = self._defaultenabledBA	
 
         print("Compiling CA APM PHP Agent install commands")
         _log.info("Compiling CA APM PHP Agent install commands")
