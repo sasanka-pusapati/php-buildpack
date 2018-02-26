@@ -154,7 +154,7 @@ class CAAPMInstaller(object):
 	if (self._enabledBA is None):
             self._enabledBA = self._defaultenabledBA;
 	else :
-	    lowerCaseValue = booleanValue.lower()
+	    lowerCaseValue = self._enabledBA.lower()
             if (lowerCaseValue in ['true','yes','1','enable']):
                 self._enabledBA = True
             elif (lowerCaseValue in ['false','no','0', 'disable']):
